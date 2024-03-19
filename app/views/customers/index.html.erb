@@ -1,0 +1,4 @@
+<!-- app/views/customers/index.html.erb -->
+<% @customers.each do |customer| %>
+  <%= render 'customer', customer: customer %>
+<% end %>
