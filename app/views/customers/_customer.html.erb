@@ -1,0 +1,19 @@
+<!-- app/views/customers/_customer.html.erb -->
+<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <%= image_tag customer.image, class: 'image-customer' if customer.image.attached? %>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <strong><%= customer.full_name %></strong>
+        <br>
+        Phone: <%= customer.phone_number %>
+        <br>
+        Email: <%= customer.email_address %>
+        <br>
+        Notes: <%= customer.notes %>
+      </div>
+    </div>
+  </article>
+</div>
