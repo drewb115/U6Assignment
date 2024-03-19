@@ -1,7 +1,7 @@
-<!-- app/views/customers/index.html.erb -->
-<h1>All Customers</h1>
+<!-- app/views/customers/missing_email.html.erb -->
+<h1>Customers Missing Email</h1>
+<%= link_to 'All Customers', customers_path %>
 <%= link_to 'Alphabetized Customers', customers_alphabetized_path %>
-<%= link_to 'Customers Missing Email', customers_missing_email_path %>
 <% @customers.each do |customer| %>
   <%= render 'customer', customer: customer %>
 <% end %>

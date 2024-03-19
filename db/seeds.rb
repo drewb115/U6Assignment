@@ -1,9 +1,17 @@
 # db/seeds.rb
-5.times do |i|
+nba_players = [
+  "LeBron James", "Kevin Durant", "Stephen Curry", "Kawhi Leonard",
+  "Giannis Antetokounmpo", "James Harden", "Chris Paul", "Damian Lillard",
+  "Anthony Davis", "Joel Embiid", "Luka Dončić", "Nikola Jokić",
+  "Jimmy Butler", "Kyrie Irving", "Russell Westbrook", "Paul George",
+  "Klay Thompson", "Karl-Anthony Towns", "Jayson Tatum", "Zion Williamson"
+]
+
+nba_players.each_with_index do |name, index|
   Customer.create!(
-    full_name: "Customer #{i + 1}",
-    phone_number: "123-456-7890",
-    email_address: i.even? ? nil : "customer#{i + 1}@example.com",
-    notes: "Some notes about Customer #{i + 1}"
+    full_name: name,
+    phone_number: "123-456-78#{format('%02d', index)}",
+    email_address: index.even? ? nil : "#{name.downcase.gsub(/\s+/, "")}@nba.com",
+    notes: "NBA player - #{name}"
   )
 end
